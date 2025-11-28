@@ -56,8 +56,8 @@ export function SeatMap({
                               "w-10 h-10 rounded-lg border-2 font-medium text-sm transition-all",
                               seat.is_available
                                 ? selectedSeat === seat.seat_number
-                                  ? "border-orange-600 bg-orange-600 text-white"
-                                  : "border-gray-300 hover:border-orange-400 bg-white"
+                                  ? "border-blue-600 bg-blue-600 text-white"
+                                  : "border-gray-300 hover:border-blue-400 bg-white"
                                 : "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed",
                             )}
                           >
@@ -77,8 +77,8 @@ export function SeatMap({
                         "w-10 h-10 rounded-lg border-2 font-medium text-sm transition-all",
                         seat.is_available
                           ? selectedSeat === seat.seat_number
-                            ? "border-orange-600 bg-orange-600 text-white"
-                            : "border-gray-300 hover:border-orange-400 bg-white"
+                            ? "border-blue-600 bg-blue-600 text-white"
+                            : "border-gray-300 hover:border-blue-400 bg-white"
                           : "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed",
                       )}
                     >
@@ -103,9 +103,13 @@ export function SeatMap({
       </CardHeader>
       <CardContent>
         <Tabs value={seatClass} onValueChange={(v) => onClassChange(v as "economy" | "business")}>
-          <TabsList className="grid w-full grid-cols-2 mb-6">
-            <TabsTrigger value="economy">Economy Class</TabsTrigger>
-            <TabsTrigger value="business">Business Class</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 mb-6 bg-gray-100 data-[state=active]:bg-blue-500 data-[state=active]:text-white">
+            <TabsTrigger value="economy" className="data-[state=active]:bg-blue-500 data-[state=active]:text-white">
+              Economy Class
+            </TabsTrigger>
+            <TabsTrigger value="business" className="data-[state=active]:bg-blue-500 data-[state=active]:text-white">
+              Business Class
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="business" className="space-y-6">
@@ -115,7 +119,7 @@ export function SeatMap({
                 <span>Available</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded border-2 border-orange-600 bg-orange-600" />
+                <div className="w-6 h-6 rounded border-2 border-blue-600 bg-blue-600" />
                 <span>Selected</span>
               </div>
               <div className="flex items-center gap-2">
@@ -141,7 +145,7 @@ export function SeatMap({
                 <span>Available</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded border-2 border-orange-600 bg-orange-600" />
+                <div className="w-6 h-6 rounded border-2 border-blue-600 bg-blue-600" />
                 <span>Selected</span>
               </div>
               <div className="flex items-center gap-2">
@@ -166,7 +170,7 @@ export function SeatMap({
             size="lg"
             disabled={!selectedSeat}
             onClick={onContinue}
-            className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
           >
             Continue to Passenger Details
           </Button>

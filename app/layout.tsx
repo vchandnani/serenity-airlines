@@ -7,9 +7,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Air India - Book Flights from US to India",
+  title: "Serenity Airlines - Book Flights from US to India",
   description:
-    "Experience world-class comfort and hospitality on direct flights from major US cities to India with Air India",
+    "Experience world-class comfort and hospitality on direct flights from major US cities to India with Serenity Airlines",
   generator: "v0.app",
   icons: {
     icon: [

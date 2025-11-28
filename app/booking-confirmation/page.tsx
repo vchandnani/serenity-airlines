@@ -4,9 +4,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { formatDateTime, formatDate } from "@/lib/utils/date"
 import { formatPrice } from "@/lib/utils/currency"
-import { CheckCircle2, Plane, Calendar, Armchair, Mail, User } from "lucide-react"
+import { CheckCircle2, Calendar, Armchair, Mail, User } from "lucide-react"
 import Link from "next/link"
 import { confirmPayment } from "@/app/actions/booking"
+import Image from "next/image"
 
 export default async function BookingConfirmationPage({
   searchParams,
@@ -30,15 +31,19 @@ export default async function BookingConfirmationPage({
   const booking = result.booking
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="bg-gradient-to-br from-orange-600 to-red-600 p-2 rounded-lg">
-              <Plane className="h-6 w-6 text-white" />
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.jpg"
+              alt="Serenity Airlines Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-lg"
+            />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Air India</h1>
+              <h1 className="text-xl font-bold text-gray-900">Serenity Airlines</h1>
               <p className="text-xs text-gray-600">Connecting US to India</p>
             </div>
           </Link>
@@ -54,7 +59,7 @@ export default async function BookingConfirmationPage({
           </div>
 
           <Card className="overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-orange-50 to-red-50">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
               <div className="flex items-start justify-between">
                 <div>
                   <CardTitle className="flex items-center gap-2 mb-2">
@@ -105,9 +110,9 @@ export default async function BookingConfirmationPage({
                     </div>
                   </div>
 
-                  <div className="bg-orange-50 p-4 rounded-lg">
+                  <div className="bg-blue-50 p-4 rounded-lg">
                     <p className="text-sm text-muted-foreground mb-1">Amount Paid</p>
-                    <p className="text-2xl font-bold text-orange-600">{formatPrice(booking.price_paid)}</p>
+                    <p className="text-2xl font-bold text-blue-600">{formatPrice(booking.price_paid)}</p>
                   </div>
                 </div>
               </div>
@@ -146,7 +151,7 @@ export default async function BookingConfirmationPage({
                   </Button>
                 </Link>
                 <Link href="/my-bookings" className="flex-1">
-                  <Button className="w-full bg-gradient-to-r from-orange-600 to-red-600">View My Bookings</Button>
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-800">View My Bookings</Button>
                 </Link>
               </div>
             </CardContent>

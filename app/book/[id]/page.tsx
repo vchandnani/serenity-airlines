@@ -25,7 +25,7 @@ export default async function BookingPage({ params, searchParams }: BookingPageP
   const selectedClass = seatClass === "business" || seatClass === "economy" ? seatClass : "economy"
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <BookingFlow flight={flight as Flight} seats={seats || []} initialClass={selectedClass} />
     </main>
   )

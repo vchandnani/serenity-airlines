@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import { Plane } from "lucide-react"
+import Image from "next/image"
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("")
@@ -50,15 +50,19 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-6">
       <div className="w-full max-w-sm">
         <div className="flex justify-center mb-8">
           <div className="flex items-center gap-2">
-            <div className="bg-gradient-to-br from-orange-600 to-red-600 p-3 rounded-lg">
-              <Plane className="h-8 w-8 text-white" />
-            </div>
+            <Image
+              src="/logo.jpg"
+              alt="Serenity Airlines Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-lg"
+            />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Air India</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Serenity Airlines</h1>
               <p className="text-sm text-gray-600">Connecting US to India</p>
             </div>
           </div>
@@ -106,7 +110,7 @@ export default function SignUpPage() {
                 {error && <p className="text-sm text-red-500">{error}</p>}
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                   disabled={isLoading}
                 >
                   {isLoading ? "Creating account..." : "Sign up"}

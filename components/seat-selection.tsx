@@ -71,12 +71,14 @@ export function SeatSelection({ flight, initialSeats, initialClass }: SeatSelect
             <CardTitle>Select Your Seat</CardTitle>
             <div className="flex gap-2">
               <Button
+                className={selectedClass === "economy" ? "bg-blue-500 hover:bg-blue-600 text-white" : ""}
                 variant={selectedClass === "economy" ? "default" : "outline"}
                 onClick={() => handleClassChange("economy")}
               >
                 Economy {formatPrice(flight.base_price_economy)}
               </Button>
               <Button
+                className={selectedClass === "business" ? "bg-blue-500 hover:bg-blue-600 text-white" : ""}
                 variant={selectedClass === "business" ? "default" : "outline"}
                 onClick={() => handleClassChange("business")}
               >
@@ -94,7 +96,7 @@ export function SeatSelection({ flight, initialSeats, initialClass }: SeatSelect
                 <span>Available</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 border-2 border-orange-600 rounded bg-orange-100" />
+                <div className="w-6 h-6 border-2 border-blue-600 rounded bg-blue-100" />
                 <span>Selected</span>
               </div>
               <div className="flex items-center gap-2">
@@ -136,13 +138,13 @@ export function SeatSelection({ flight, initialSeats, initialClass }: SeatSelect
                               className={cn(
                                 "w-10 h-10 border-2 rounded transition-all flex items-center justify-center",
                                 status === "available" &&
-                                  "border-gray-300 bg-white hover:border-orange-600 hover:bg-orange-50",
-                                status === "selected" && "border-orange-600 bg-orange-100",
+                                  "border-gray-300 bg-white hover:border-blue-600 hover:bg-blue-50",
+                                status === "selected" && "border-blue-600 bg-blue-100",
                                 status === "occupied" && "border-gray-300 bg-gray-200 cursor-not-allowed",
                                 status === "unavailable" && "border-transparent bg-transparent cursor-not-allowed",
                               )}
                             >
-                              {status === "selected" && <CheckCircle2 className="h-4 w-4 text-orange-600" />}
+                              {status === "selected" && <CheckCircle2 className="h-4 w-4 text-blue-600" />}
                               {status === "occupied" && <Armchair className="h-4 w-4 text-gray-400" />}
                               {status === "available" && <Armchair className="h-4 w-4 text-gray-400" />}
                             </button>
@@ -158,16 +160,16 @@ export function SeatSelection({ flight, initialSeats, initialClass }: SeatSelect
 
             {/* Selection summary */}
             {selectedSeat && (
-              <div className="bg-orange-50 p-4 rounded-lg">
+              <div className="bg-blue-50 p-4 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground">Selected Seat</p>
-                    <p className="text-2xl font-bold text-orange-600">{selectedSeat}</p>
+                    <p className="text-2xl font-bold text-blue-600">{selectedSeat}</p>
                     <p className="text-sm text-muted-foreground capitalize">{selectedClass} Class</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-muted-foreground">Price</p>
-                    <p className="text-2xl font-bold text-orange-600">{formatPrice(price)}</p>
+                    <p className="text-2xl font-bold text-blue-600">{formatPrice(price)}</p>
                   </div>
                 </div>
               </div>

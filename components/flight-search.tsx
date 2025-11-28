@@ -38,7 +38,7 @@ export function FlightSearch({ flights }: FlightSearchProps) {
     <div className="space-y-8">
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-2 mb-6">
-          <Search className="h-5 w-5 text-orange-600" />
+          <Search className="h-5 w-5 text-blue-600" />
           <h3 className="text-lg font-semibold text-gray-900">Search Flights</h3>
         </div>
 

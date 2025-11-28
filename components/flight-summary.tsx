@@ -71,10 +71,10 @@ export function FlightSummary({ flight, selectedSeat, seatClass, price }: Flight
 
         <Separator />
 
-        <div className="bg-orange-50 p-4 rounded-lg">
+        <div className="bg-blue-50 p-4 rounded-lg">
           <div className="flex justify-between items-center">
             <span className="font-semibold">Total Amount</span>
-            <span className="text-2xl font-bold text-orange-600">{formatPrice(price)}</span>
+            <span className="text-2xl font-bold text-blue-600">{formatPrice(price)}</span>
           </div>
         </div>
       </CardContent>

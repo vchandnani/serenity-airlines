@@ -1,9 +1,9 @@
 import { createClient } from "@/lib/supabase/server"
 import type { Flight } from "@/lib/types"
 import { FlightSearch } from "@/components/flight-search"
-import { Plane } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default async function HomePage() {
   const supabase = await createClient()
@@ -15,15 +15,13 @@ export default async function HomePage() {
     .order("departure_time", { ascending: true })
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="bg-gradient-to-br from-orange-600 to-red-600 p-2 rounded-lg">
-              <Plane className="h-6 w-6 text-white" />
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/logo.jpg" alt="Serenity Airlines Logo" width={48} height={48} className="w-12 h-12" />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Air India</h1>
+              <h1 className="text-xl font-bold text-gray-900">Serenity Airlines</h1>
               <p className="text-xs text-gray-600">Connecting US to India</p>
             </div>
           </Link>
@@ -32,7 +30,7 @@ export default async function HomePage() {
               <Button variant="outline">My Bookings</Button>
             </Link>
             <Link href="/auth/login">
-              <Button>Sign In</Button>
+              <Button className="bg-blue-500 hover:bg-blue-600 text-white">Sign In</Button>
             </Link>
           </nav>
         </div>

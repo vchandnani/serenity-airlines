@@ -30,7 +30,7 @@ export function FlightCard({ flight, preferredClass }: FlightCardProps) {
                   <Badge variant="outline" className="font-mono">
                     {flight.flight_number}
                   </Badge>
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-100">{flight.aircraft_type}</Badge>
+                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">{flight.aircraft_type}</Badge>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
@@ -53,7 +53,7 @@ export function FlightCard({ flight, preferredClass }: FlightCardProps) {
                   <span>{duration}</span>
                 </div>
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent relative">
-                  <Plane className="h-5 w-5 text-orange-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90" />
+                  <Plane className="h-5 w-5 text-blue-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">Direct</p>
               </div>
@@ -75,7 +75,7 @@ export function FlightCard({ flight, preferredClass }: FlightCardProps) {
               </div>
               <Link href={`/book/${flight.id}?class=economy`}>
                 <Button
-                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white"
                   variant={preferredClass === "economy" ? "default" : "outline"}
                 >
                   Select Economy
@@ -89,7 +89,10 @@ export function FlightCard({ flight, preferredClass }: FlightCardProps) {
                 <span className="text-lg font-bold text-gray-900">{businessPrice}</span>
               </div>
               <Link href={`/book/${flight.id}?class=business`}>
-                <Button className="w-full" variant={preferredClass === "business" ? "default" : "outline"}>
+                <Button
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white"
+                  variant={preferredClass === "business" ? "default" : "outline"}
+                >
                   Select Business
                 </Button>
               </Link>
