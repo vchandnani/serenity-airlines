@@ -285,10 +285,7 @@ function createIpc(port) {
             // Reserve 4 bytes for our length prefix, we will over-write after encoding.
             const packet = Buffer.from('0000' + message, 'utf8');
             packet.writeUInt32BE(packet.length - 4, 0);
-            socketWritable.write(packet, (err)=>{
-                process.stderr.write(`TURBOPACK_OUTPUT_D\n`);
-                process.stdout.write(`TURBOPACK_OUTPUT_D\n`);
-                if (err != null) {
+            socketWritable.write(packet, (err)=>{if (err != null) {
                     reject(err);
                 } else {
                     resolve();
