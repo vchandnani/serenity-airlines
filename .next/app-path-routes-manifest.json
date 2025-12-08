@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/seats/route": "/api/seats",
+  "/auth/login/page": "/auth/login",
+  "/auth/sign-up-success/page": "/auth/sign-up-success",
+  "/auth/sign-up/page": "/auth/sign-up",
+  "/book/[id]/page": "/book/[id]",
+  "/booking-confirmation/page": "/booking-confirmation",
+  "/booking-success/page": "/booking-success",
+  "/my-bookings/page": "/my-bookings",
+  "/page": "/"
+}
